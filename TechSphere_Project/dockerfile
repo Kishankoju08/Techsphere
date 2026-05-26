@@ -1,7 +1,7 @@
-FROM php:8.2-apache
+FROM dunglas/frankenphp
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+COPY . /app
 
-COPY . /var/www/html/
+WORKDIR /app
 
 EXPOSE 80

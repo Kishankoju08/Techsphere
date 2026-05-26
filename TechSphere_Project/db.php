@@ -1,12 +1,14 @@
 <?php
-$conn = mysqli_connect(
-    "sql310.infinityfree.com",   // Host
-    "if0_42021419",              // Username
-    "YOUR_INFINITYFREE_PASSWORD",// Password (from vPanel login)
-    "if0_42021419_techsphere"   // Database name
-);
 
-if(!$conn){
+$host = $_ENV['MYSQLHOST'];
+$user = $_ENV['MYSQLUSER'];
+$pass = $_ENV['MYSQLPASSWORD'];
+$db   = $_ENV['MYSQLDATABASE'];
+$port = $_ENV['MYSQLPORT'];
+
+$conn = mysqli_connect($host, $user, $pass, $db, $port);
+
+if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>
